@@ -18,3 +18,7 @@ The versions for all other R packages used for this analysis can be found in the
 
 # Data requirements
 The primary data sources for this analysis are the NSFG (2011-2013 and 2017-2019). The NSFG is publicly available from the Centers for Disease Control and Prevention website https://www.cdc.gov/nchs/nsfg/nsfg_questionnaires.htm. The National Center for Health Statistics provides detailed guides for working with these data and options to download the data using SPSS, SAS, or STATA. For this study we opted to use the SPSS versions so the scripts for cleaning variable construction are written in SPSS code.     
+
+# Repeat the analysis
+
+1) File 001 and 002 will convert the NSFG data files 
