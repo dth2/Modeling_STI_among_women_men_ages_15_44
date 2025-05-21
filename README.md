@@ -21,4 +21,6 @@ The primary data sources for this analysis are the NSFG (2011-2013 and 2017-2019
 
 # Repeat the analysis
 
-1) File 001 and 002 will convert the NSFG data files 
+1) Files NSFG_01 through NSFG_14 are test files containing the SPSS code to convert the publicly available NSFGFile 001 and 002 will convert the NSFG data files from wave 2011-2013, 2013-2015, 2015-2017, and 2017-2019 in to the data files used for this analysis. The data from the four waves are first harmonized and reduced to a subset a variables used or considered for use in this study. Male and female data sets are combined seperatly. Once the four waves of data are combined the scripts _11 through _14 eaxtrract just the 2011 and 2019 data used in this analysis, construct the individual variables needed for this study and output a self-weighted sample of the data to inform the sexual network model. Users will need to redefine all directory paths.
+
+2)    
