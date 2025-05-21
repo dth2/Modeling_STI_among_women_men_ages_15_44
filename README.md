@@ -23,4 +23,5 @@ The primary data sources for this analysis are the NSFG (2011-2013 and 2017-2019
 
 1) Files NSFG_01 through NSFG_14 are test files containing the SPSS code to convert the publicly available NSFGFile 001 and 002 will convert the NSFG data files from wave 2011-2013, 2013-2015, 2015-2017, and 2017-2019 in to the data files used for this analysis. The data from the four waves are first harmonized and reduced to a subset a variables used or considered for use in this study. Male and female data sets are combined seperatly. Once the four waves of data are combined the scripts _11 through _14 eaxtrract just the 2011 and 2019 data used in this analysis, construct the individual variables needed for this study and output a self-weighted sample of the data to inform the sexual network model. Users will need to redefine all directory paths.
 
-2)    
+2) The R scripts 001 Make SWS of US 2019data.R and 002 Make SWS of US 2011data.R prep the NSFG data for use in the EpiModel environment. The output files are a long file that contains data on each sexual relatioship extracted for the NSFG and a wide file that contains a single row of attribute data for each individual from the NSFG data that will be used to inform the network model.
+3)  
