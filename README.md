@@ -27,5 +27,5 @@ The primary data sources for this analysis are the NSFG (2011-2013 and 2017-2019
 
 3) The R scripts 001 Make SWS of US 2019data.R and 002 Make SWS of US 2011data.R prep the NSFG data for use in the EpiModel environment. The output files are a self weighted sample of the NSFG data output as a long file that contains data on each sexual relatioship from the egos sampled with replacement from the NSFG and a wide file that contains a single row of attributes for each ego in the selfweighted sample from the NSFG data that will be used to inform the network model.
    
-5) The Make NW_params.R and Make NW_stats.R R scripts should be loaded in to the R environment. These functions will be used to generate the network paramters and network statristics used by EpiModelHIV from the  NSFG data. 
+5) The Make NW_params.R and Make NW_stats.R R scripts should be loaded in to the R environment. These functions will be used to generate the network paramters and network statistics used by EpiModelHIV from the NSFG data. Specifically NW_params will calculate the individual-level network parameters and NW_stats will 
 
