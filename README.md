@@ -40,6 +40,11 @@ The primary data sources for this analysis are the NSFG (2011-2013 and 2017-2019
 10) Once 02 estimate.R has estimated the ERGM and TERGM models, they have been determined to be satisfactory based on the diagnostics, and the EpiStats models have been estimated the analysis can proceed to burn-in and calibration simulations.
 
 11) The initial burn-in simulations must be run to reach an epidemic equalibrium and verify the network dynamics. We used 50 years as our starting burn-in period to cycle through a complete turnover in the population ages 15-65.  
+
 12) If the netwrok statistics are not preserved by the initial ERGM/TERGM model estimates they can be adjuscted using the 05 adjust coef.R script and the burn-in can be repeated to confirm that the estimated netwok models are reproducing the target statistics.
-13) Once the network models are adjusted and the network statistics are preserved with satisfactory fidelity the Epidemic dynamics must be calibrated usind Approximate baysian computation.
-14) 
+
+13) Once the network models are adjusted and the network statistics are preserved with satisfactory fidelity the Epidemic dynamics must be calibrated usind Approximate Baysian Computation. The files to run the ABC can be found in the ABC_repo folder. These files are desighned to be run on a HPC system. There were run on the HYAC-MOX HPC at the University of Washington using a SLURM scheduler.
+
+14) The master.mox.sh script is executed on the HPC system to initiate the ABC. It is assumed the user has installed the required R version and all of the required R packages on their HPC system. The master file call the runsim which will source both R and the simulation file on the HPC system.
+
+15) The sim.abc.R file defines each of the tuning parameters and their priors and the target statistics. Here the tuning parameters are race-specific probablities of GC and CT aquisition given exposure and duractions of untreated infection. Target statistics were race-and-sex-specific GC and CT diagnoses per 100,000 individuals.
