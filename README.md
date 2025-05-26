@@ -53,12 +53,11 @@ EXECUTE.
 
 Convert the SPSS data files to .rdata files using stattransfer or a preferred data conversion application.
 
-The remainder of the analysis is performed in R.
+4)The remainder of the analysis is performed in R. All R and .sh scripts are also included as .txt files to facilitate access.
 
+5) The Versions of R and all of the required R packages with versions are listed in the renvlock file. You can use the renv package to build the required R environment.
 
-4) The Versions of R and all of the required R packages with versions are listed in the renvlock file. You can use the renv package to build the required R environment.
-
-5) The R scripts "001 Make SWS of US 2019data.R" and "002 Make SWS of US 2011data.R" prep the NSFG data for use in the EpiModel environment. The output files are a self-weighted sample of the NSFG data output as a long file that contains data on each sexual relationship from the egos sampled with replacement from the NSFG and a wide file that contains a single row of attributes for each ego in the self-weighted sample from the NSFG data that will be used to inform the network model.
+6) The R scripts "001 Make SWS of US 2019data.R" and "002 Make SWS of US 2011data.R" prep the NSFG data for use in the EpiModel environment. The output files are a self-weighted sample of the NSFG data output as a long file that contains data on each sexual relationship from the egos sampled with replacement from the NSFG and a wide file that contains a single row of attributes for each ego in the self-weighted sample from the NSFG data that will be used to inform the network model.
 
    - Input files = NSFGsexnet2011_reduced_national.rdata
    - Input files = NSFGsexnet2019_reduced_national.rdata
