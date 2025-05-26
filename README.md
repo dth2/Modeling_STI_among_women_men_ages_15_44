@@ -25,19 +25,19 @@ The primary data sources for this analysis are the NSFG (2011-2013 and 2017-2019
 
 1) Files NSFG_01 through NSFG_14 are .txt files containing the SPSS code to convert the publicly available data files to those used in our analysis. NSFGFile 001 and 002 will convert the NSFG data files from wave 2011-2013, 2013-2015, 2015-2017, and 2017-2019 in to a single multi-wave data file following the National Center for Health Statistics guidlines for merging the data. The data from the four waves are harmonized and the survey weights are added to the data files. Male and female data sets are combined separately. Scripts _11 through _14 extract just the 2011 and 2019 data used in this analysis, construct the individual variables needed for this study and output a self-weighted sample of the data to inform the sexual network model. Users will need to redefine all directory paths.
 
-    Inputfile = 2011_2013_MaleData.dat
-    Inputfile = 2011_2013_FemRespData.dat
-    Inputfile = 2013_2015_MaleData.dat
-    Inputfile = 2013_2015_FemRespData.dat
-    Inputfile = 2015_2017_MaleData.dat
-    Inputfile = 2015_2017_FemRespData.dat
-    Inputfile = 2017_2019_MaleData.dat
-    Inputfile = 2017_2019_FemRespData.dat
+  `  Inputfile = 2011_2013_MaleData.dat
+  `  Inputfile = 2011_2013_FemRespData.dat
+  `  Inputfile = 2013_2015_MaleData.dat
+  `  Inputfile = 2013_2015_FemRespData.dat
+  `  Inputfile = 2015_2017_MaleData.dat
+  `  Inputfile = 2015_2017_FemRespData.dat
+  `  Inputfile = 2017_2019_MaleData.dat
+  `  Inputfile = 2017_2019_FemRespData.dat
 
-    Output file = NSFGsexnet2011m_reduced_national.sav
-    Output file = NSFGsexnet2011f_reduced_national.sav
-    Output file = NSFGsexnet2019m_reduced_national.sav
-    Output file = NSFGsexnet2019f_reduced_national.sav
+   - Output file = NSFGsexnet2011m_reduced_national.sav
+   - Output file = NSFGsexnet2011f_reduced_national.sav
+   - Output file = NSFGsexnet2019m_reduced_national.sav
+   - Output file = NSFGsexnet2019f_reduced_national.sav
 
 The male files for 2011 and 2019 should be merges with their respective female respondent files with the following renaming conventions
 ADD FILES /FILE=*
