@@ -110,14 +110,22 @@ Output data = EpiStats_2019.rda
 
 15) Once 02 estimate.R has estimated the ERGM and TERGM models, they have been determined to be satisfactory based on the diagnostics, and the EpiStats models have been estimated, the analysis can proceed to burn-in and calibration simulations.
 
-16) The initial burn-in simulations must be run to reach an epidemic equalibrium and verify the network dynamics. We used 50 years as our starting burn-in period to cycle through a complete turnover in the population ages 15-65.
+16) The initial burn-in simulations must be run to reach an epidemic equalibrium and verify the network dynamics. We used 50 years as our starting burn-in period to cycle through a complete turnover in the population ages 15-65. The duraction of the burn-in is designated as nsteps in the sim.burn.R script.
 
-17) Files for the burn-in process are in the 
+17) Files for the burn-in process are in the burn_repo folder. the burn-in runs are executed on an HPC system. They were run on the HYAC-MOX HPC at the University of Washington using a SLURM scheduler. These files should be loaded on to the HPC system. master.burn.sh is the SLURM script to execute a burn-in simulation on the HPC system. master.burn.sh will call the runsim.sh script which will load R on the HPC system and execute the simulation script sim.burn.sh  sim.process.burn.R will process the output from the burn-in and produce plots comparing the simulated values for race-and-sex-specific GC and CT diagnoses to the target values. This file can also be modified to compaire any other epidemic outcomes or netwrok features stored by EpimodelHIV. 
 
-18) If the netwrok statistics are not preserved by the initial ERGM/TERGM model estimates they can be adjuscted using the 05 adjust coef.R script and the burn-in can be repeated to confirm that the estimated netwok models are reproducing the target statistics.
+18) If the netwrok statistics are not preserved by the initial ERGM/TERGM model estimates they can be adjuscted using the 05 adjust coef.R script and the burn-in can be repeated to confirm that the estimated netwok models are reproducing the target statistics. The burn-in may take hours to days depending on comuting power, the number of replicates, and the number of time steps specified. 
 
 19) Once the network models are adjusted and the network statistics are preserved with satisfactory fidelity the Epidemic dynamics must be calibrated usind Approximate Baysian Computation. The files to run the ABC can be found in the ABC_repo folder. These files are desighned to be run on a HPC system. There were run on the HYAC-MOX HPC at the University of Washington using a SLURM scheduler.
 
 20) The master.mox.sh script is executed on the HPC system to initiate the ABC. It is assumed the user has installed the required R version and all of the required R packages on their HPC system. The master file call the runsim which will source both R and the simulation file on the HPC system.
 
-21) The sim.abc.R file defines each of the tuning parameters and their priors and the target statistics. Here the tuning parameters are race-specific probablities of GC and CT aquisition given exposure and duractions of untreated infection. Target statistics were race-and-sex-specific GC and CT diagnoses per 100,000 individuals.
+21) sim.abc.R defines each of the tuning parameters and their priors and the target statistics. Here the tuning parameters are race-specific probablities of GC and CT aquisition given exposure and duractions of untreated infection. Target statistics were race-and-sex-specific GC and CT diagnoses per 100,000 individuals.
+
+22) sim.post.R will extract the posteriar distributions for each tuning parameter and plot it relative to the target value and the prior. 
+
+23) Follwoing the ABC repeat step 17 using the output parameters from the ABC. We used 2000 replicates of the burn-in to identify a realization that most closely matched our epidemic target statistics. This realization will serve as the initial conditions for the epidemic simulations used in this study
+
+24) Epidemic simulations were run on the HYAC-MOX HPC at the University of Washington using a SLURM scheduler. These files should be loaded on to the HPC system. master.burn.sh is the SLURM script to execute a burn-in simulation on the HPC system. There are 7 sim files that will run the scenarios evaluated in this study. Each scenario is run for 520 time steps (ten years)
+
+sim_base.R  - the baseline scenario
